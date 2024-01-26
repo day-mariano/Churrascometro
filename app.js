@@ -1,14 +1,20 @@
-// const formCadastrar = document.getElementById("formCadastrar");
-// const nome = document.getElementById("nome");
-// const email = document.getElementById("email");
-// const cep = document.getElementById("cep");
 
-function enviarFormulario(event) {
-  console.log('event:', event)
-  event.preventDefault();
-  const formCadastrar = event.target;
+const elementoHomens = document.getElementById("elementoHomens")
+const elementoMulheres = document.getElementById("elementoMulheres")
+const elementoCriancas = document.getElementById("elementoCriancas")
+const elementoBebem = document.getElementById("elementoBebem")
 
-  const formData = new FormData(formCadastrar);
-  console.log('get:', formData.get('nome'))
+function adicionar(elemento) {
+  let quantidadeAtual = elemento.textContent
+  
+  quantidadeAtual ++
+  elemento.innerText= `${quantidadeAtual}`
+}
 
+function subtrair(elemento){
+  let quantidadeAtual = elemento.textContent
+  if (quantidadeAtual > 0) {
+    quantidadeAtual --
+    elemento.innerText= `${quantidadeAtual}`
+  }
 }

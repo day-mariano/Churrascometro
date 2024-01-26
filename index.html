@@ -23,38 +23,38 @@
       <div class="contadorWrapper">
         <div class="divsPessoas">
           <h2>Homens</h2>
-          <p>0</p>
+          <p id="elementoHomens">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas">-</button>
-            <button class="buttonsPessoas">+</button>
+            <button class="buttonsPessoas" id="btnMenosHomem" onclick="subtrair(elementoHomens)">-</button>
+            <button class="buttonsPessoas" id="btnMaisHomem" onclick="adicionar(elementoHomens)">+</button>
           </div>
         </div>
         <div class="divsPessoas">
           <h2>Mulheres</h2>
-          <p>0</p>
+          <p id="elementoMulheres">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas">-</button>
-            <button class="buttonsPessoas">+</button>
+            <button class="buttonsPessoas" id="btnMenosMulher" onclick="subtrair(elementoMulheres)">-</button>
+            <button class="buttonsPessoas" id="btnMaisMulher" onclick="adicionar(elementoMulheres)">+</button>
           </div>
         </div>
         <div class="divsPessoas">
           <h2>Crianças</h2>
-          <p>0</p>
+          <p id="elementoCriancas">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas">-</button>
-            <button class="buttonsPessoas">+</button>
+            <button class="buttonsPessoas" id="btnMenosCrianca" onclick="subtrair(elementoCriancas)">-</button>
+            <button class="buttonsPessoas" id="btnMaisCrianca" onclick="adicionar(elementoCriancas)">+</button>
           </div>
         </div>
         <div class="divsPessoas">
           <h2>Quantos adultos bebem?</h2>
-          <p>0</p>
+          <p id="elementoBebem">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas">-</button>
-            <button class="buttonsPessoas">+</button>
+            <button class="buttonsPessoas" id="btnMaisBebem" onclick="subtrair(elementoBebem)">-</button>
+            <button class="buttonsPessoas" id="btnMenosBebem" onclick="adicionar(elementoBebem)">+</button>
           </div>
         </div>
       </div>
-      <button class="buttonsRed">Calcular</button>
+      <button class="buttonsRed" id="buttonCalcular">Calcular</button>
   </main>
 
   <footer id="footer">Desenvolvido por Dayana Mariano 2024</footer>

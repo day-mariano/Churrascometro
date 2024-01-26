@@ -114,7 +114,8 @@ section {
   cursor: pointer;
 }
 footer{
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
+  /* margin: auto; */
   font-size: 12px;
 }
 
