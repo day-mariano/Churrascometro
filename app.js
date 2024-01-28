@@ -1,14 +1,20 @@
-// Adicionar e remover quantiade de pessoas 
 const elementoHomens = document.getElementById("elementoHomens")
 const elementoMulheres = document.getElementById("elementoMulheres")
 const elementoCriancas = document.getElementById("elementoCriancas")
 const elementoBebem = document.getElementById("elementoBebem")
 
+// 
+elementoHomens.innerText = localStorage.getItem("homens") || "0"
+elementoMulheres.innerText = localStorage.getItem("mulheres") || "0"
+elementoCriancas.innerText = localStorage.getItem("criancas") || "0"
+elementoBebem.innerText = localStorage.getItem("bebem") || "0"
+
+// Adicionar, remover e guardar no locarlStorage
 function adicionar(elemento, pessoa) {
   let quantidadeAtual = elemento.textContent
   quantidadeAtual ++
-  elemento.innerText= `${quantidadeAtual}`
-  localStorage.setItem(pessoa, `${quantidadeAtual}`)
+  localStorage.setItem(pessoa, quantidadeAtual)
+  elemento.innerText = quantidadeAtual
 }
 
 function subtrair(elemento, pessoa){
@@ -60,14 +66,4 @@ function calcular() {
   console.log("cerveja:", cerveja)
 
 }
-// Guardar no locarl storage
-function armazenar(){
-  ``
-}
-// localStorage.setItem("Homens:", `${elementoHomens.textContent}`)
-// localStorage.setItem("Mulheres:", `${elementoMulheres.textContent}`)
-// localStorage.setItem("Crianças:", `${elementoHomens.textContent}`)
-// localStorage.setItem("Adultos Bebem:", `${elementoHomens.textContent}`)
-
-
 
