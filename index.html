@@ -22,35 +22,35 @@
       <p>Quantas pessoas vão participar?</p>
       <div class="contadorWrapper">
         <div class="divsPessoas">
-          <h2>Homens</h2>
+          <h2 id="pessoasHomens">Homens</h2>
           <p id="elementoHomens">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas" id="btnMenosHomem" onclick="subtrair(elementoHomens)">-</button>
-            <button class="buttonsPessoas" id="btnMaisHomem" onclick="adicionar(elementoHomens)">+</button>
+            <button class="buttonsPessoas" id="btnMenosHomem" onclick="subtrair(elementoHomens, 'homens')">-</button>
+            <button class="buttonsPessoas" id="btnMaisHomem" onclick="adicionar(elementoHomens, 'homens')">+</button>
           </div>
         </div>
         <div class="divsPessoas">
-          <h2>Mulheres</h2>
+          <h2 id="pessoasMulheres">Mulheres</h2>
           <p id="elementoMulheres">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas" id="btnMenosMulher" onclick="subtrair(elementoMulheres)">-</button>
-            <button class="buttonsPessoas" id="btnMaisMulher" onclick="adicionar(elementoMulheres)">+</button>
+            <button class="buttonsPessoas" id="btnMenosMulher" onclick="subtrair(elementoMulheres, 'mulheres')">-</button>
+            <button class="buttonsPessoas" id="btnMaisMulher" onclick="adicionar(elementoMulheres, 'mulheres')">+</button>
           </div>
         </div>
         <div class="divsPessoas">
-          <h2>Crianças</h2>
+          <h2 id="pessoasCriancas">Crianças</h2>
           <p id="elementoCriancas">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas" id="btnMenosCrianca" onclick="subtrair(elementoCriancas)">-</button>
-            <button class="buttonsPessoas" id="btnMaisCrianca" onclick="adicionar(elementoCriancas)">+</button>
+            <button class="buttonsPessoas" id="btnMenosCrianca" onclick="subtrair(elementoCriancas, 'criancas')">-</button>
+            <button class="buttonsPessoas" id="btnMaisCrianca" onclick="adicionar(elementoCriancas, 'criancas')">+</button>
           </div>
         </div>
         <div class="divsPessoas">
-          <h2>Quantos adultos bebem?</h2>
+          <h2 id="pessoasBebem">Quantos adultos bebem?</h2>
           <p id="elementoBebem">0</p>
           <div class="wrapperButtonsCalcular">
-            <button class="buttonsPessoas" id="btnMaisBebem" onclick="subtrair(elementoBebem)">-</button>
-            <button class="buttonsPessoas" id="btnMenosBebem" onclick="adicionar(elementoBebem)">+</button>
+            <button class="buttonsPessoas" id="btnMaisBebem" onclick="subtrair(elementoBebem, 'bebem')">-</button>
+            <button class="buttonsPessoas" id="btnMenosBebem" onclick="adicionar(elementoBebem, 'bebem')">+</button>
           </div>
         </div>
       </div>

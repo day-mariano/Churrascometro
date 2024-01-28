@@ -1,23 +1,26 @@
+// Adicionar e remover quantiade de pessoas 
 const elementoHomens = document.getElementById("elementoHomens")
 const elementoMulheres = document.getElementById("elementoMulheres")
 const elementoCriancas = document.getElementById("elementoCriancas")
 const elementoBebem = document.getElementById("elementoBebem")
 
-function adicionar(elemento) {
+function adicionar(elemento, pessoa) {
   let quantidadeAtual = elemento.textContent
-  
   quantidadeAtual ++
   elemento.innerText= `${quantidadeAtual}`
+  localStorage.setItem(pessoa, `${quantidadeAtual}`)
 }
 
-function subtrair(elemento){
+function subtrair(elemento, pessoa){
   let quantidadeAtual = elemento.textContent
   if (quantidadeAtual > 0) {
     quantidadeAtual --
     elemento.innerText= `${quantidadeAtual}`
+    localStorage.setItem(pessoa, `${quantidadeAtual}`)
   }
 }
 
+// Calcular resultado
 const buttonCalcular = document.getElementById("buttonCalcular")
 const sectionCalcular = document.getElementById("sectionCalcular")
 buttonCalcular.addEventListener("click", calcular)
@@ -32,6 +35,7 @@ function calcular() {
   
   const carvao = (elementoHomens.textContent * 1) + (elementoMulheres.textContent * 1) + (elementoCriancas.textContent * 1)
   console.log("carvão:", carvao)
+
 
   const refrigerante = () => {
     const totalPessoas = (elementoHomens.textContent * 1) + (elementoMulheres.textContent * 1) + (elementoCriancas.textContent * 1)
@@ -56,4 +60,14 @@ function calcular() {
   console.log("cerveja:", cerveja)
 
 }
+// Guardar no locarl storage
+function armazenar(){
+  ``
+}
+// localStorage.setItem("Homens:", `${elementoHomens.textContent}`)
+// localStorage.setItem("Mulheres:", `${elementoMulheres.textContent}`)
+// localStorage.setItem("Crianças:", `${elementoHomens.textContent}`)
+// localStorage.setItem("Adultos Bebem:", `${elementoHomens.textContent}`)
+
+
 
