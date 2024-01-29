@@ -29,10 +29,15 @@ function subtrair(elemento, pessoa){
 // Calcular resultado
 const buttonCalcular = document.getElementById("buttonCalcular")
 const sectionCalcular = document.getElementById("sectionCalcular")
+const sectionFormulario = document.getElementById("sectionFormulario")
 buttonCalcular.addEventListener("click", calcular)
 
 function calcular() {
-  sectionCalcular.setAttribute("style","display:none;")
+  // sectionCalcular.setAttribute("style","display:none;")
+  sectionCalcular.classList.add("ocultar")
+  // if(localStorage.getItem("nome")){
+  //   sectionFormulario.classList.remove("ocultar")
+  // }
   const carne = (elementoHomens.textContent * 0.4) + (elementoMulheres.textContent * 0.32) + (elementoCriancas.textContent * 0.20)
   console.log("carne:", carne)
 
@@ -60,5 +65,20 @@ function calcular() {
   const cerveja = (elementoBebem.textContent * 3)
   console.log("cerveja:", cerveja)
 
+}
+//C adastrar
+const nome = document.getElementById("nome")
+const email = document.getElementById("email")
+const cep = document.getElementById("cep")
+const checkComunicacoes = document.getElementById("checkComunicacoes")
+const buttonCadastrar = document.getElementById("buttonCadastrar")
+buttonCadastrar.addEventListener("click", cadastrar)
+
+function cadastrar() {
+  console.log(nome)
+  localStorage.setItem("nome:", nome.value)
+  localStorage.setItem("email:", email.value)
+  localStorage.setItem("cep:", cep.value)
+  localStorage.setItem("comunicacoes:", checkComunicacoes.value)
 }
 

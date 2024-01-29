@@ -8,14 +8,14 @@
   <title>Churrascômetro</title>
 </head>
 <body>
+  <header>
+    <label class="switch">
+      Tema escuro
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </header>
   <main>
-    <header>
-      <label class="switch">
-        Tema escuro
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </header>
     <h1>Churrascômetro</h1>
     <section id="sectionCalcular">
       <p>Precisa de uma ajudinha com o churrasco? :)</p>
@@ -55,6 +55,24 @@
         </div>
       </div>
       <button class="buttonsRed" id="buttonCalcular">Calcular</button>
+    </section>
+    <section id="sectionFormulario" class="ocultar">
+      <p>Fique por entro de todas as novidades. Cadastre seu e-mail e receba promocões especiais!</p>
+      <form id="formCadastrar" onsubmit="enviarFormulario(event)">
+        <input type="text" name="nome" id="nome" class="inputCadastro" placeholder="Digite seu nome" required>
+        <input type="email" name="email" id="email" class="inputCadastro" placeholder="Digite seu email" required>
+        <input type="number" name="cep" id="cep" class="inputCadastro" placeholder="Digite seu CEP" required>
+        <label for="checkComunicacoes" id="labelCheck">
+          <input type="checkbox" name="checkComunicacoes" id="checkComunicacoes" checked>
+          Concordo em receber comunicações e ofertas personalizadas de acordo com meus interesses.
+        </label>
+        <input type="submit" value="Cadastrar" id="buttonCadastrar" class="buttonsRed">
+      </form>
+      <div class="wrapperButtonsCadastro">
+        <button class="blackButton">Voltar</button>
+        <button class="blackButton">Pular</button>
+      </div>
+    </section>
   </main>
 
   <footer id="footer">Desenvolvido por Dayana Mariano 2024</footer>

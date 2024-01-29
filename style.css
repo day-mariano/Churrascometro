@@ -1,5 +1,5 @@
 body {
-  background: rgb(60, 51, 57);
+  background: rgb(56, 39, 39);
   color: white;
   font-family: monospace;
   display: flex;
@@ -8,24 +8,29 @@ body {
   align-items: center;
   font-size: 16px;
   height: 100vh;
+  /* padding: auto; */
 }
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto auto;
+  max-width: 400px;
+  margin: 3rem auto auto;
 }
 h1 {
   color: rgb(239, 143, 83);
-  font-size: 32px;
+  font-size: 34px;
+  letter-spacing: .3rem;;
 }
-
+.ocultar {
+  display: none;
+}
 section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+#sectionCalcular {
   align-items: center;
 }
 .contadorWrapper {
@@ -74,7 +79,9 @@ section {
   height: 40px;
   margin: 1rem;
 }
-
+#sectionFormulario p{
+  text-align: center;
+}
 #formCadastrar{
   display: flex;
   flex-direction: column;
@@ -82,18 +89,20 @@ section {
   align-items: center;
   margin: 1rem;
 }
-
 .inputCadastro {
   background: rgb(201, 177, 165);
-  padding: 8px;
+  padding: 1rem;
   border-radius: 8px;
   border-width: 3px;
-  border-style:solid;
+  border-style: solid;
   border-color: rgb(157, 137, 127);
   display: flex;
-  align-items: center;
-  max-width: 400px;
-  margin: 0.5rem;
+  width: 300px;
+  margin: 1rem;
+}
+#labelCheck {
+  margin: 2rem auto;
+  font-size: 12px;
 }
 
 .buttonsRed {
@@ -106,16 +115,20 @@ section {
   margin: 0.5rem;
   cursor: pointer;
 }
+.wrapperButtonsCadastro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .blackButton {
   background-color: transparent;
   padding: 8px;
-  color: black;
+  color: rgb(157, 137, 127);
+  font-weight: bold;
   border-style: none;
   cursor: pointer;
 }
 footer{
-  /* margin-bottom: 0; */
-  /* margin: auto; */
   font-size: 12px;
 }
 
