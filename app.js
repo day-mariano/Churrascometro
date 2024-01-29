@@ -9,7 +9,7 @@ elementoMulheres.innerText = localStorage.getItem("mulheres") || "0"
 elementoCriancas.innerText = localStorage.getItem("criancas") || "0"
 elementoBebem.innerText = localStorage.getItem("bebem") || "0"
 
-// Adicionar, remover e guardar no locarlStorage
+// Adicionar,remover e guardar no locarlStorage
 function adicionar(elemento, pessoa) {
   let quantidadeAtual = elemento.textContent
   quantidadeAtual ++
@@ -43,24 +43,19 @@ function calcular() {
   console.log("carvão:", carvao)
 
 
-  const refrigerante = () => {
+  const calcularRefrigerante = () => {
     const totalPessoas = (elementoHomens.textContent * 1) + (elementoMulheres.textContent * 1) + (elementoCriancas.textContent * 1)
-    if (totalPessoas <= 5 ) {
-      return 1
-    } else if (totalPessoas > 5) {
-      return 2
-    }
+    const refrigerante = totalPessoas / 5
+    return Math.ceil(refrigerante)
   }
-  console.log("refrigerante:", refrigerante())
-  const agua = () => {
+  console.log("refrigerante:", calcularRefrigerante())
+
+  const calcularAgua = () => {
     const totalPessoas = (elementoHomens.textContent * 1) + (elementoMulheres.textContent * 1) + (elementoCriancas.textContent * 1)
-    if (totalPessoas <= 5 ) {
-      return 1
-    } else if (totalPessoas > 5) {
-      return 2
-    }
+    const agua = totalPessoas / 5
+    return Math.ceil(agua)
   }
-  console.log("água:", agua())
+  console.log("agua:", calcularAgua())
 
   const cerveja = (elementoBebem.textContent * 3)
   console.log("cerveja:", cerveja)
