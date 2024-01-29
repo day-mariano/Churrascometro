@@ -4,9 +4,9 @@ body {
   font-family: monospace;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   height: 100vh;
   /* padding: auto; */
 }
@@ -16,12 +16,13 @@ main {
   justify-content: center;
   align-items: center;
   max-width: 400px;
-  margin: 3rem auto auto;
+  /* margin: 2rem auto auto; */
 }
 h1 {
   color: rgb(239, 143, 83);
-  font-size: 34px;
-  letter-spacing: .3rem;;
+  font-size: 30px;
+  letter-spacing: .3rem;
+  margin: 0;
 }
 .ocultar {
   display: none;
@@ -128,10 +129,43 @@ section {
   border-style: none;
   cursor: pointer;
 }
+#sectionTabela {
+  align-items: center;
+}
+#resultadoConvidados{
+  color: rgb(223, 99, 50);
+  margin: auto;
+}
+.resultadoPessoas{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+
+}
+table {
+  background: rgb(201, 177, 165);
+  color: rgb(56, 39, 39);
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 4px;
+  border-color: rgb(157, 137, 127);
+  padding: 8px;
+  margin: 1rem auto;
+}
+tr {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: rgb(157, 137, 127);
+  line-height: 2.5;
+}
+.tdBold {
+  font-weight: bold;
+}
 footer{
   font-size: 12px;
 }
-
 @media (max-width: 975px) {
   .contadorWrapper {
     flex-wrap: wrap;
