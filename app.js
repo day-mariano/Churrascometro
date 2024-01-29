@@ -49,11 +49,6 @@ const tdCarvao = document.getElementById("tdCarvao")
 
 
 function calcular() {
-  sectionCalcular.classList.add("ocultar")
-  sectionFormulario.classList.remove("ocultar")
-  // if(localStorage.getItem("nome")){
-  //   sectionFormulario.classList.remove("ocultar")
-  // }
   const carne = (valueHomens * 0.4) + (valueMulheres * 0.32) + (valueCriancas * 0.20)
   console.log("carne:", carne)
   tdCarne.innerText= `${carne} kg`
@@ -87,26 +82,34 @@ function calcular() {
   console.log("cerveja:", cerveja)
   tdCerveja.innerText = `${cerveja} garrafa de 600ml`
 
+  sectionCalcular.classList.add("ocultar")
+  sectionFormulario.classList.remove("ocultar")
+  if(localStorage.getItem("nome")){
+    sectionFormulario.classList.add("ocultar")
+    sectionTabela.classList.remove("ocultar")
+  }
+  
+
 }
 //Cadastrar
 const sectionTabela = document.getElementById("sectionTabela")
-const nome = document.getElementById("nome")
-const email = document.getElementById("email")
-const cep = document.getElementById("cep")
-const checkComunicacoes = document.getElementById("checkComunicacoes")
+const elementoNome = document.getElementById("elementoNome")
+const elementoEmail = document.getElementById("elementoEmail")
+const elementoCep = document.getElementById("elementoCep")
+const elementoComunicacoes = document.getElementById("elementoComunicacoes")
 const buttonCadastrar = document.getElementById("buttonCadastrar")
 buttonCadastrar.addEventListener("click", cadastrar)
 
 function cadastrar(event) {
   event.preventDefault()
 
+  localStorage.setItem("nome", elementoNome.value)
+  localStorage.setItem("email", elementoEmail.value)
+  localStorage.setItem("cep", elementoCep.value)
+  localStorage.setItem("comunicacoes", elementoComunicacoes.value)
+
   sectionCalcular.classList.add("ocultar")
   sectionFormulario.classList.add("ocultar")
   sectionTabela.classList.remove("ocultar")
-
-  localStorage.setItem("nome:", nome.value)
-  localStorage.setItem("email:", email.value)
-  localStorage.setItem("cep:", cep.value)
-  localStorage.setItem("comunicacoes:", checkComunicacoes.value)
 }
 
