@@ -158,3 +158,15 @@ function novoCalculo() {
   sectionTabela.classList.add("ocultar")
   sectionCalcular.classList.remove("ocultar")
 }
+
+document.getElementById("seletorTema").addEventListener("click", (evento) => {
+  const marcado = evento.target.checked;
+
+  const body = document.getElementsByTagName("body")[0]
+
+  if (marcado) {
+    body.classList.remove("tema-claro")
+  } else {
+    body.classList.add("tema-claro")
+  }
+})

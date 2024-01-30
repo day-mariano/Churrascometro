@@ -10,6 +10,16 @@ body {
   height: 100vh;
   /* padding: auto; */
 }
+
+.tema-claro {
+  background-color: #f4dbcd;
+  color: black;
+}
+
+.tema-claro h1 {
+  color: #705555;
+}
+
 main {
   display: flex;
   flex-direction: column;
