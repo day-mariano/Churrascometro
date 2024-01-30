@@ -3,7 +3,7 @@ const elementoMulheres = document.getElementById("elementoMulheres")
 const elementoCriancas = document.getElementById("elementoCriancas")
 const elementoBebem = document.getElementById("elementoBebem")
 
-// Valores salvos'
+// Valores salvos
 const valueConvidados = localStorage.getItem("convidados")
 const valueHomens = localStorage.getItem("homens")
 const valueMulheres = localStorage.getItem("mulheres")
@@ -95,8 +95,6 @@ function calcular() {
     sectionFormulario.classList.add("ocultar")
     sectionTabela.classList.remove("ocultar")
   }
-  
-
 }
 //Cadastrar
 const sectionTabela = document.getElementById("sectionTabela")
@@ -120,3 +118,34 @@ function cadastrar(event) {
   sectionTabela.classList.remove("ocultar")
 }
 
+const buttonVoltar = document.getElementById("buttonVoltar")
+buttonVoltar.addEventListener("click", voltar)
+function voltar() {
+  sectionFormulario.classList.add("ocultar")
+  sectionCalcular.classList.remove("ocultar")
+}
+
+const buttonPular = document.getElementById("buttonPular")
+buttonPular.addEventListener("click", pular)
+function pular() {
+  sectionFormulario.classList.add("ocultar")
+  sectionTabela.classList.remove("ocultar")
+}
+
+// const buttonNovoCalculo = document.getElementById("buttonNovoCalculo")
+// buttonNovoCalculo.addEventListener("click", novoCalculo)
+// function novoCalculo() {
+//   localStorage.removeItem("convidados")
+//   localStorage.removeItem("homens")
+//   localStorage.removeItem("mulheres")
+//   localStorage.removeItem("criancas")
+//   localStorage.removeItem("bebem")
+
+//   // elementoHomens.innerText = "0"
+//   // elementoMulheres.innerText = "0"
+//   // elementoCriancas.innerText = "0"
+//   // elementoBebem.innerText = "0"
+
+
+//   sectionTabela.classList.add("ocultar")
+//   sectionCalcular.classList.remove("ocultar")
