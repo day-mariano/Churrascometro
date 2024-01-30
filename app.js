@@ -4,11 +4,11 @@ const elementoCriancas = document.getElementById("elementoCriancas")
 const elementoBebem = document.getElementById("elementoBebem")
 
 // Valores salvos
-const valueConvidados = localStorage.getItem("convidados")
 const valueHomens = localStorage.getItem("homens")
 const valueMulheres = localStorage.getItem("mulheres")
 const valueCriancas = localStorage.getItem("criancas")
 const valueBebem = localStorage.getItem("bebem")
+
 // Mantem nos input
 elementoHomens.innerText = valueHomens || "0"
 elementoMulheres.innerText = valueMulheres || "0"
@@ -42,10 +42,6 @@ const resultadoConvidados = document.getElementById("resultadoConvidados")
 const resultadoHomens = document.getElementById("resultadoHomens")
 const resultadoMulheres = document.getElementById("resultadoMulheres")
 const resultadoCriancas = document.getElementById("resultadoCriancas")
-resultadoConvidados.innerText = `${valueConvidados} convidados`
-resultadoHomens.innerText = `${valueHomens} homens`
-resultadoMulheres.innerText = `${valueMulheres} mulheres`
-resultadoCriancas.innerText = `${valueCriancas || 0} crianças`
 
 const tdCarne = document.getElementById("tdCarne")
 const tdPaodeAlho = document.getElementById("tdPaodeAlho")
@@ -56,36 +52,49 @@ const tdCarvao = document.getElementById("tdCarvao")
 
 
 function calcular() {
-  const carne = (valueHomens * 0.4) + (valueMulheres * 0.32) + (valueCriancas * 0.20)
+  // Valores salvos
+  const valueHomens = localStorage.getItem("homens")
+  const valueMulheres = localStorage.getItem("mulheres")
+  const valueCriancas = localStorage.getItem("criancas")
+  const valueBebem = localStorage.getItem("bebem")
+  const homens = +valueHomens || 0
+  const mulheres = +valueMulheres || 0
+  const criancas = +valueCriancas || 0
+  const bebem = +valueBebem || 0
+  const convidados = homens + mulheres + criancas
+
+  resultadoConvidados.innerText = `${convidados} convidados`
+  resultadoHomens.innerText = `${homens} homens`
+  resultadoMulheres.innerText = `${mulheres} mulheres`
+  resultadoCriancas.innerText = `${criancas} crianças`
+
+  const carne = (homens * 0.4) + (mulheres  * 0.32) + (criancas * 0.20)
   console.log("carne:", carne)
   tdCarne.innerText= `${carne} kg`
 
-  const paoDeAlho = (valueHomens * 2) + (valueMulheres * 2) + (valueCriancas * 1)
+  const paoDeAlho = homens * 2 + mulheres * 2 + criancas
   console.log("pão de alho:", paoDeAlho)
   tdPaodeAlho.innerText = `${paoDeAlho} unidades`
   
-  const carvao = (valueHomens * 1) + (valueMulheres * 1) + (valueCriancas * 1)
+  const carvao = convidados
   console.log("carvão:", carvao)
   tdCarvao.innerText = `${carvao} kg`
 
-  const totalPessoas = (valueHomens * 1) + (valueMulheres * 1) + (valueCriancas * 1)
-  localStorage.setItem("convidados", totalPessoas)
-
   const calcularRefrigerante = () => {
-    const refrigerante = totalPessoas / 5
+    const refrigerante = convidados / 5
     return Math.ceil(refrigerante)
   }
   console.log("refrigerante:", calcularRefrigerante())
   tdRefrigerante.innerText = `${calcularRefrigerante()} garrafa de 2L`
 
   const calcularAgua = () => {
-    const agua = totalPessoas / 5
+    const agua = convidados / 5
     return Math.ceil(agua)
   }
   console.log("agua:", calcularAgua())
   tdAgua.innerText = `${calcularAgua()} garrafa de 1L`
 
-  const cerveja = (valueBebem * 3)
+  const cerveja = (bebem * 3)
   console.log("cerveja:", cerveja)
   tdCerveja.innerText = `${cerveja} garrafa de 600ml`
 
@@ -132,20 +141,20 @@ function pular() {
   sectionTabela.classList.remove("ocultar")
 }
 
-// const buttonNovoCalculo = document.getElementById("buttonNovoCalculo")
-// buttonNovoCalculo.addEventListener("click", novoCalculo)
-// function novoCalculo() {
-//   localStorage.removeItem("convidados")
-//   localStorage.removeItem("homens")
-//   localStorage.removeItem("mulheres")
-//   localStorage.removeItem("criancas")
-//   localStorage.removeItem("bebem")
+const buttonNovoCalculo = document.getElementById("buttonNovoCalculo")
+buttonNovoCalculo.addEventListener("click", novoCalculo)
+function novoCalculo() {
+  localStorage.removeItem("convidados")
+  localStorage.removeItem("homens")
+  localStorage.removeItem("mulheres")
+  localStorage.removeItem("criancas")
+  localStorage.removeItem("bebem")
 
-//   // elementoHomens.innerText = "0"
-//   // elementoMulheres.innerText = "0"
-//   // elementoCriancas.innerText = "0"
-//   // elementoBebem.innerText = "0"
+  elementoHomens.innerText = "0"
+  elementoMulheres.innerText = "0"
+  elementoCriancas.innerText = "0"
+  elementoBebem.innerText = "0"
 
-
-//   sectionTabela.classList.add("ocultar")
-//   sectionCalcular.classList.remove("ocultar")
+  sectionTabela.classList.add("ocultar")
+  sectionCalcular.classList.remove("ocultar")
+}
