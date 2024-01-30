@@ -3,7 +3,8 @@ const elementoMulheres = document.getElementById("elementoMulheres")
 const elementoCriancas = document.getElementById("elementoCriancas")
 const elementoBebem = document.getElementById("elementoBebem")
 
-// Valores salvos
+// Valores salvos'
+const valueConvidados = localStorage.getItem("convidados")
 const valueHomens = localStorage.getItem("homens")
 const valueMulheres = localStorage.getItem("mulheres")
 const valueCriancas = localStorage.getItem("criancas")
@@ -36,10 +37,16 @@ const buttonCalcular = document.getElementById("buttonCalcular")
 const sectionCalcular = document.getElementById("sectionCalcular")
 const sectionFormulario = document.getElementById("sectionFormulario")
 buttonCalcular.addEventListener("click", calcular)
+
 const resultadoConvidados = document.getElementById("resultadoConvidados")
 const resultadoHomens = document.getElementById("resultadoHomens")
 const resultadoMulheres = document.getElementById("resultadoMulheres")
 const resultadoCriancas = document.getElementById("resultadoCriancas")
+resultadoConvidados.innerText = `${valueConvidados} convidados`
+resultadoHomens.innerText = `${valueHomens} homens`
+resultadoMulheres.innerText = `${valueMulheres} mulheres`
+resultadoCriancas.innerText = `${valueCriancas || 0} crianças`
+
 const tdCarne = document.getElementById("tdCarne")
 const tdPaodeAlho = document.getElementById("tdPaodeAlho")
 const tdRefrigerante = document.getElementById("tdRefrigerante")
@@ -61,9 +68,10 @@ function calcular() {
   console.log("carvão:", carvao)
   tdCarvao.innerText = `${carvao} kg`
 
+  const totalPessoas = (valueHomens * 1) + (valueMulheres * 1) + (valueCriancas * 1)
+  localStorage.setItem("convidados", totalPessoas)
 
   const calcularRefrigerante = () => {
-    const totalPessoas = (valueHomens * 1) + (valueMulheres * 1) + (valueCriancas * 1)
     const refrigerante = totalPessoas / 5
     return Math.ceil(refrigerante)
   }
@@ -71,7 +79,6 @@ function calcular() {
   tdRefrigerante.innerText = `${calcularRefrigerante()} garrafa de 2L`
 
   const calcularAgua = () => {
-    const totalPessoas = (valueHomens * 1) + (valueMulheres * 1) + (valueCriancas * 1)
     const agua = totalPessoas / 5
     return Math.ceil(agua)
   }
